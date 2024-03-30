@@ -1,0 +1,11 @@
+{
+  "name": "Haskell",
+  "dockerFile": "../Dockerfile",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "haskell.haskell"
+      ]
+    }
+  }
+}
