@@ -4,7 +4,8 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "haskell.haskell"
+        "formulahendry.code-runner",
+        "mogeko.haskell-extension-pack"
       ]
     }
   }

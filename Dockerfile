@@ -1,8 +1,13 @@
-FROM haskell:9.8.2
+FROM haskell:latest
 
-RUN apt-get update && apt-get install -y \
-    git \
-    && rm -rf /var/lib/apt/lists/*
+ENV PATH="${PATH}:/root/.ghcup/bin:/root/.cabal/bin:/root/.ghc/bin" \
+    BOOTSTRAP_HASKELL_NONINTERACTIVE=1
 
-RUN useradd -ms /bin/bash vscode
-USER vscode
+RUN curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+
+RUN ghcup install ghc 9.8.2 && \
+    ghcup install hls 2.7.0.0
+
+RUN cabal update
+
+RUN cabal install hlint
