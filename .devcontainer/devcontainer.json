@@ -1,12 +1,18 @@
 {
-  "name": "Haskell",
-  "dockerFile": "../Dockerfile",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "formulahendry.code-runner",
-        "mogeko.haskell-extension-pack"
-      ]
-    }
-  }
+	"name": "Haskell",
+	"build": {
+		"dockerfile": "../Dockerfile"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"haskell.haskell",
+				"ms-vscode.vscode-typescript-next"
+			],
+			"settings": {
+				"terminal.integrated.shell.linux": "/bin/bash"
+			}
+		}
+	},
+	"postCreateCommand": "stack setup"
 }

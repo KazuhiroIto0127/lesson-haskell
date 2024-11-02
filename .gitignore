@@ -1,0 +1,36 @@
+# Cabal specific
+dist-newstyle/
+dist/
+cabal.sandbox.config
+cabal.sandbox/
+*.cabal~
+
+# Stack specific
+.stack-work/
+.stack-work/*
+
+# Haskell IDEs and tools
+*.hi
+*.o
+*.dyn_o
+*.dyn_hi
+.hsenv
+.hdevtools.js
+.ghc.environment.*
+.ghc/
+
+# Haskell Language Server
+.hie/
+.hie-bios/
+.hls/
+
+# Temporary files
+*.prof
+*.aux
+*.hp
+*.eventlog
+*.tix
+
+# OS generated files
+.DS_Store
+Thumbs.db
