@@ -71,3 +71,7 @@ executable even-odd-checker
 executable factorial
     import:           shared-settings
     main-is:          Factorial.hs
+
+executable list-sum-average
+    import:           shared-settings
+    main-is:          ListSumAverage.hs
