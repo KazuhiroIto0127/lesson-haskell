@@ -75,3 +75,7 @@ executable factorial
 executable list-sum-average
     import:           shared-settings
     main-is:          ListSumAverage.hs
+
+executable fibonacci
+    import:           shared-settings
+    main-is:          Fibonacci.hs
