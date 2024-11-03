@@ -67,3 +67,7 @@ executable sum-program
 executable even-odd-checker
     import:           shared-settings
     main-is:          EvenOddChecker.hs
+
+executable factorial
+    import:           shared-settings
+    main-is:          Factorial.hs
