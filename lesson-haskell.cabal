@@ -79,3 +79,7 @@ executable list-sum-average
 executable fibonacci
     import:           shared-settings
     main-is:          Fibonacci.hs
+
+executable list
+    import:           shared-settings
+    main-is:          List.hs
