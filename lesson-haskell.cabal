@@ -83,3 +83,7 @@ executable fibonacci
 executable list
     import:           shared-settings
     main-is:          List.hs
+
+executable tuples
+    import:           shared-settings
+    main-is:          Tuples.hs
