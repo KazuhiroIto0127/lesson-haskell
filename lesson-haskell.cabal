@@ -58,7 +58,7 @@ common shared-settings
 
 executable hello-world
     import:           shared-settings
-    main-is:          Main.hs
+    main-is:          HelloWorld.hs
 
 executable sum-program
     import:           shared-settings
