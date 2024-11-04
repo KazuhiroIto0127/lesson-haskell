@@ -87,3 +87,7 @@ executable list
 executable tuples
     import:           shared-settings
     main-is:          Tuples.hs
+
+executable function
+    import:           shared-settings
+    main-is:          Function.hs
