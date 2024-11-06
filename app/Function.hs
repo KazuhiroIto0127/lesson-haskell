@@ -21,6 +21,10 @@ sayMe 4 = "Four!"
 sayMe 5 = "Five!"
 sayMe _ = "Not between 1 and 5"
 
+capital :: String -> String
+capital "" = "Empty string, whoops!"
+capital str@(x:_) = "The first letter of " ++ str ++ " is " ++ [x]
+
 main ::IO ()
 main = do
   putStrLn $ removeNonUppercase "A Ha Ho hi"
@@ -28,3 +32,4 @@ main = do
   putStrLn $ show (factorial 50)
   putStrLn $ show (sum' [1,2,3,5] :: Integer)
   putStrLn $ sayMe (1 :: Integer)
+  putStrLn $ capital "Test"
