@@ -9,8 +9,13 @@ addThree x y z = x + y + z
 factorial :: Integer -> Integer
 factorial n = product [1..n]
 
+sum' :: Num n => [n] -> n
+sum' [] = 0
+sum' (x:xs) = x + sum' xs
+
 main ::IO ()
 main = do
   putStrLn $ removeNonUppercase "A Ha Ho hi"
   putStrLn $ show (addThree 1 2 3)
   putStrLn $ show (factorial 50)
+  putStrLn $ show (sum' [1,2,3,5] :: Integer)
