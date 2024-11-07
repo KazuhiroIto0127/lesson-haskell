@@ -13,6 +13,7 @@ sum' :: Num n => [n] -> n
 sum' [] = 0
 sum' (x:xs) = x + sum' xs
 
+-- パターンマッチを使って表現
 sayMe :: (Integral a) => a -> String
 sayMe 1 = "One!"
 sayMe 2 = "Two!"
@@ -21,6 +22,14 @@ sayMe 4 = "Four!"
 sayMe 5 = "Five!"
 sayMe _ = "Not between 1 and 5"
 
+-- ガードを使って表現
+sayMe' :: (Integral a) => a -> String
+sayMe' x
+  | x == 1 = "one!"
+  | x == 2 = "two!"
+  | otherwise = "not between 1 and 2"
+
+-- Asパターン
 capital :: String -> String
 capital "" = "Empty string, whoops!"
 capital str@(x:_) = "The first letter of " ++ str ++ " is " ++ [x]
@@ -33,3 +42,4 @@ main = do
   putStrLn $ show (sum' [1,2,3,5] :: Integer)
   putStrLn $ sayMe (1 :: Integer)
   putStrLn $ capital "Test"
+  putStrLn $ sayMe' (2 :: Integer)
