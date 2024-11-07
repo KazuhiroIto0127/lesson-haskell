@@ -34,6 +34,14 @@ capital :: String -> String
 capital "" = "Empty string, whoops!"
 capital str@(x:_) = "The first letter of " ++ str ++ " is " ++ [x]
 
+-- where句で計算を再利用
+densityTell :: (RealFloat a) => a -> a -> String
+densityTell mass volume
+  | density < 1.2 = "Wow! You're going for a ride in the sky!"
+  | density <= 1000.0 = "Have fun swimming, but watch out for sharks!"
+  | otherwise = "If it's sink or swim, you're going to sink."
+  where density = mass / volume
+
 main ::IO ()
 main = do
   putStrLn $ removeNonUppercase "A Ha Ho hi"
@@ -43,3 +51,4 @@ main = do
   putStrLn $ sayMe (1 :: Integer)
   putStrLn $ capital "Test"
   putStrLn $ sayMe' (2 :: Integer)
+  putStrLn $ densityTell 100.0 10.0
