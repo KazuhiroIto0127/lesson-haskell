@@ -91,3 +91,7 @@ executable tuples
 executable function
     import:           shared-settings
     main-is:          Function.hs
+
+executable let
+    import:           shared-settings
+    main-is:          Let.hs
