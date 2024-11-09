@@ -95,3 +95,9 @@ executable function
 executable let
     import:           shared-settings
     main-is:          Let.hs
+
+executable fibo_normal
+    import:           shared-settings
+    build-depends: base >= 4.7 && < 5,
+               time
+    main-is:          benchmark/Fibonacci_normal.hs
