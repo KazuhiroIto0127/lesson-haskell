@@ -3,8 +3,14 @@ lesson of haskell
 
 devcontainerで環境をつくってください。</br>
 
-app配下に新規で試したいプログラムを追加して、
-例えば、Factorial.hs
+```
+runghc app/HelloWorld.h
+```
+
+もしくは下記</br>
+
+app配下に新規で試したいプログラムを追加して、</br>
+例えば、Factorial.hs</br>
 
 そして、lesson-haskell.cabalに下記行を追加して
 
