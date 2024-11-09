@@ -3,6 +3,8 @@ lesson of haskell
 
 devcontainerで環境をつくってください。</br>
 
+プログラムの実行</br>
+
 ```
 runghc app/HelloWorld.h
 ```
