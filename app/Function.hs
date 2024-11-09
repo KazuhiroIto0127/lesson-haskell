@@ -29,6 +29,14 @@ sayMe' x
   | x == 2 = "two!"
   | otherwise = "not between 1 and 2"
 
+-- caseを使って表現
+sayMe'' :: (Integral a) => a -> String
+sayMe'' x =
+  case x of
+    1 -> "one!"
+    2 -> "two!"
+    _ -> "Unknown"
+
 -- Asパターン
 capital :: String -> String
 capital "" = "Empty string, whoops!"
@@ -49,6 +57,7 @@ main = do
   putStrLn $ show (factorial 50)
   putStrLn $ show (sum' [1,2,3,5] :: Integer)
   putStrLn $ sayMe (1 :: Integer)
-  putStrLn $ capital "Test"
   putStrLn $ sayMe' (2 :: Integer)
-  putStrLn $ densityTell 100.0 10.0
+  putStrLn $ sayMe'' (3 :: Integer)
+  putStrLn $ capital "Test"
+  putStrLn $ densityTell (100.0 :: Double) (10.0 :: Double)
