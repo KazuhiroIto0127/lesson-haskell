@@ -1,17 +1,19 @@
+{-# OPTIONS_GHC -Wno-unused-do-bind #-}
+
 module Main where
 
 removeNonUppercase :: [Char] -> [Char]
-removeNonUppercase st = [c | c <- st, c `elem` ['A'..'Z']]
+removeNonUppercase st = [c | c <- st, c `elem` ['A' .. 'Z']]
 
 addThree :: Int -> Int -> Int -> Int
 addThree x y z = x + y + z
 
 factorial :: Integer -> Integer
-factorial n = product [1..n]
+factorial n = product [1 .. n]
 
-sum' :: Num n => [n] -> n
+sum' :: (Num n) => [n] -> n
 sum' [] = 0
-sum' (x:xs) = x + sum' xs
+sum' (x : xs) = x + sum' xs
 
 -- パターンマッチを使って表現
 sayMe :: (Integral a) => a -> String
@@ -40,7 +42,7 @@ sayMe'' x =
 -- Asパターン
 capital :: String -> String
 capital "" = "Empty string, whoops!"
-capital str@(x:_) = "The first letter of " ++ str ++ " is " ++ [x]
+capital str@(x : _) = "The first letter of " ++ str ++ " is " ++ [x]
 
 -- where句で計算を再利用
 densityTell :: (RealFloat a) => a -> a -> String
@@ -48,14 +50,15 @@ densityTell mass volume
   | density < 1.2 = "Wow! You're going for a ride in the sky!"
   | density <= 1000.0 = "Have fun swimming, but watch out for sharks!"
   | otherwise = "If it's sink or swim, you're going to sink."
-  where density = mass / volume
+  where
+    density = mass / volume
 
-main ::IO ()
+main :: IO ()
 main = do
   putStrLn $ removeNonUppercase "A Ha Ho hi"
   putStrLn $ show (addThree 1 2 3)
   putStrLn $ show (factorial 50)
-  putStrLn $ show (sum' [1,2,3,5] :: Integer)
+  putStrLn $ show (sum' [1, 2, 3, 5] :: Integer)
   putStrLn $ sayMe (1 :: Integer)
   putStrLn $ sayMe' (2 :: Integer)
   putStrLn $ sayMe'' (3 :: Integer)

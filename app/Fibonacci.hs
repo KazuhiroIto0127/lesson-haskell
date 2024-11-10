@@ -11,4 +11,4 @@ main = do
   num <- readLn :: IO Int
   if num < 0
     then putStrLn "Fibonacci is not defined for negative numbers."
-    else putStrLn $ "The Fibonacci number at position " ++ show num ++ " is " ++ show (fibonacci(num))
+    else putStrLn $ "The Fibonacci number at position " ++ show num ++ " is " ++ show (fibonacci (num))
