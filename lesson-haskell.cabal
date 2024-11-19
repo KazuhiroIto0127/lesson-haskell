@@ -101,3 +101,7 @@ executable fibo_normal
     build-depends: base >= 4.7 && < 5,
                time
     main-is:          benchmark/Fibonacci_normal.hs
+
+executable type
+    import:           shared-settings
+    main-is:          Type.hs
