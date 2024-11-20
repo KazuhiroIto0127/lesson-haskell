@@ -1,11 +1,18 @@
 module Main where
 
+-- type --
+type Name = String
+type Age = Int
+type Person = (Name, Age)
+
+-- newtype --
 newtype K = K Double deriving Show
 newtype C = C Double deriving Show
 
 convert :: C -> K
 convert (C x) = K (x + 273.15)
 
+-- data --
 data HTTPStatus = OK
                 | Found
                 | NotFound
@@ -20,10 +27,16 @@ statusMessage ServiceUnavailable = "The service is unavailable right now."
     
 main :: IO ()
 main = do
+    -- type
+    let person :: Person
+        person = ("Alice", 30)
+    putStrLn $ "name: " ++ fst person ++ ", age: " ++ show (snd person)
+    -- newtype
     let tempC = C 10
     let tempK = K 0
     putStrLn $ show tempC
     putStrLn $ show tempK
     putStrLn $ show (convert tempC)
+    -- data
     putStrLn $ "Status: " ++ show OK ++ " -> " ++ statusMessage OK
     
