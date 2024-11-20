@@ -24,7 +24,14 @@ statusMessage OK                 = "Everything is fine."
 statusMessage Found              = "The resource has been found."
 statusMessage NotFound           = "The resource could not be found."
 statusMessage ServiceUnavailable = "The service is unavailable right now."
-    
+
+-- 再帰型
+data Nat = Zero | Succ Nat deriving Show
+
+toInt :: Nat -> Int
+toInt Zero = 0
+toInt (Succ n) = 1 + toInt n
+
 main :: IO ()
 main = do
     -- type
@@ -39,4 +46,7 @@ main = do
     putStrLn $ show (convert tempC)
     -- data
     putStrLn $ "Status: " ++ show OK ++ " -> " ++ statusMessage OK
+    -- 再起
+    let two = Succ (Succ Zero)
+    print (toInt two)
     
