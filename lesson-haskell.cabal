@@ -105,3 +105,7 @@ executable fibo_normal
 executable type
     import:           shared-settings
     main-is:          Type.hs
+
+executable Composition
+    import:           shared-settings
+    main-is:          Composition.hs
